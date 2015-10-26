@@ -5,6 +5,6 @@ module('Unit | Helper | i18n t');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  var result = i18nT(42);
-  assert.ok(result);
+  var result = i18nT(["Singular"]);
+  assert.equal(result.string, "Singular");
 });

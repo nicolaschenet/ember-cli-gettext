@@ -3,8 +3,12 @@ import { module, test } from 'qunit';
 
 module('Unit | Helper | i18n n');
 
-// Replace this with your real tests.
-test('it works', function(assert) {
-  var result = i18nN(42);
-  assert.ok(result);
+test('It should handle singular forms', function(assert) {
+  var result = i18nN(["Singular", "Plural"], {count: 1});
+  assert.equal(result.string, "Singular");
+});
+
+test('It should handle plural forms', function(assert) {
+  var result = i18nN(["Singular", "Plural"], {count: 2});
+  assert.equal(result.string, "Plural");
 });
