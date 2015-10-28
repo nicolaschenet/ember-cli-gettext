@@ -1,7 +1,8 @@
 import Ember from 'ember';
+import gettext from 'ember-cli-gettext/gettext';
 
-export function i18nN(params, hash) {
-  return new Ember.Handlebars.SafeString(Ember.I18n._n(...params, hash));
+export function getText(params, hash) {
+  return new Ember.Handlebars.SafeString(gettext._n(...params, hash));
 }
 
-export default Ember.Helper.helper(i18nN);
+export default Ember.Helper.helper(getText);
